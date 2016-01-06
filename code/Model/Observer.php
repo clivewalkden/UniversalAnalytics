@@ -45,6 +45,8 @@ class BlueAcorn_UniversalAnalytics_Model_Observer extends Mage_Core_Model_Observ
      * @param observer $observer
      */
     public function viewProductBeforeCollection($observer) {
+        if (!$this->helper->isActive()) return;
+
         $attributes = $this->helper->getTranslationAttributes('addProduct', 'removeproduct', 'addImpression' );
 
         foreach ($attributes as $attribute) {
@@ -63,7 +65,7 @@ class BlueAcorn_UniversalAnalytics_Model_Observer extends Mage_Core_Model_Observ
     public function viewProductCollection($observer) {
         // Lock down this function in order to prevent infinite
         // recursion loops
-        if ($this->lockObserver('collection')) return;
+        if (!$this->helper->isActive() || $this->lockObserver('collection')) return;
 
         $collection   = $observer->getCollection();
         $listName     = $this->helper->getCollectionListName($collection);
@@ -87,7 +89,7 @@ class BlueAcorn_UniversalAnalytics_Model_Observer extends Mage_Core_Model_Observ
     public function viewProduct($observer) {
         // Lock down this function in order to prevent infinite
         // recursion loops
-        if ($this->lockObserver('product')) return;
+        if (!$this->helper->isActive() || $this->lockObserver('product')) return;
 
         $product = $observer->getProduct();
 
@@ -125,6 +127,8 @@ class BlueAcorn_UniversalAnalytics_Model_Observer extends Mage_Core_Model_Observ
      * @param observer $observer
      */
     public function viewPage($observer) {
+        if (!$this->helper->isActive()) return;
+
         $cartItems = Mage::getModel('checkout/cart')->getQuote()->getAllItems();
 
         foreach ($cartItems as $item) {
@@ -144,6 +148,8 @@ class BlueAcorn_UniversalAnalytics_Model_Observer extends Mage_Core_Model_Observ
      * @param observer $observer 
      */
     public function viewPromotion($observer) {
+        if (!$this->helper->isActive()) return;
+
         $block = $observer->getBlock();
         $className = get_class($block);
 
