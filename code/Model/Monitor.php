@@ -401,7 +401,8 @@ class BlueAcorn_UniversalAnalytics_Model_Monitor {
             $newValue = $this->$method($product, $attribute);
             if ($newValue !== null) break;
         }
-
+        
+        $newValue = ($attribute == 'coupon_code') ? strtoupper($newValue) : $newValue;
         $newValue = str_replace(array("\n", "\t", "\r"), ' ', $newValue);
 
         return $newValue;
