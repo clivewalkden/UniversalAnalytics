@@ -26,63 +26,66 @@
             </updates>
         </layout>
         <events>
-	    <catalog_product_load_after>
-		<observers>
-		    <baua>
-			<type>model</type>
-			<class>baua/observer</class>
-			<method>viewProduct</method>
-		    </baua>
-		</observers>
-	    </catalog_product_load_after>
+            <catalog_product_load_after>
+                <observers>
+                    <baua>
+                        <type>model</type>
+                        <class>baua/observer</class>
+                        <method>viewProduct</method>
+                    </baua>
+                </observers>
+            </catalog_product_load_after>
 
-	    <catalog_product_collection_load_before>
-		<observers>
-		    <baua>
-			<type>model</type>
-			<class>baua/observer</class>
-			<method>viewProductBeforeCollection</method>
-		    </baua>
-		</observers>
-	    </catalog_product_collection_load_before>
+            <catalog_product_collection_load_before>
+                <observers>
+                    <baua>
+                        <type>model</type>
+                        <class>baua/observer</class>
+                        <method>viewProductBeforeCollection</method>
+                    </baua>
+                </observers>
+            </catalog_product_collection_load_before>
 
-	    <catalog_product_collection_load_after>
-		<observers>
-		    <baua>
-			<type>model</type>
-			<class>baua/observer</class>
-			<method>viewProductCollection</method>
-		    </baua>
-		</observers>
-	    </catalog_product_collection_load_after>
+            <catalog_product_collection_load_after>
+                <observers>
+                    <baua>
+                        <type>model</type>
+                        <class>baua/observer</class>
+                        <method>viewProductCollection</method>
+                    </baua>
+                </observers>
+            </catalog_product_collection_load_after>
 
-	    <controller_action_layout_generate_blocks_after>
-		<observers>
-		    <baua>
-			<type>model</type>
-			<class>baua/observer</class>
-			<method>viewPage</method>
-		    </baua>
-		</observers>
-	    </controller_action_layout_generate_blocks_after>
+            <controller_action_layout_generate_blocks_after>
+                <observers>
+                    <baua>
+                        <type>model</type>
+                        <class>baua/observer</class>
+                        <method>viewPage</method>
+                    </baua>
+                </observers>
+            </controller_action_layout_generate_blocks_after>
 
-	    <core_block_abstract_to_html_after>
-		<observers>
-		    <baua>
-			<type>model</type>
-			<class>baua/observer</class>
-			<method>viewPromotion</method>
-		    </baua>
-		</observers>
-	    </core_block_abstract_to_html_after>
+            <core_block_abstract_to_html_after>
+                <observers>
+                    <baua>
+                        <type>model</type>
+                        <class>baua/observer</class>
+                        <method>viewPromotion</method>
+                    </baua>
+                </observers>
+            </core_block_abstract_to_html_after>
 
         </events>
     </frontend>
     <default>
+        <google>
+            <baua>
+                <active>0</active>
+            </baua>
+        </google>
+
         <baua>
-            <settings>
-                <enabled>0</enabled>
-            </settings>
             <translation>
                 <addImpression>
                     <id>entity_id</id>
@@ -91,11 +94,11 @@
                     <category>category_collection</category>
                     <variant>color</variant>
                     <price>
-			<specialPrice/>
-			<price/>
+                        <specialPrice/>
+                        <price/>
                     </price>
-		    <list>blank</list>
-		    <position>blank</position>
+                    <list>blank</list>
+                    <position>blank</position>
                 </addImpression>
 
                 <addPromo>
@@ -107,17 +110,17 @@
                     <name>name</name>
                     <category>category_collection</category>
                     <brand>manufacturer</brand>
-		    <variant>color</variant>
+                    <variant>color</variant>
                     <price>
                         <specialPrice/>
                         <price/>
                     </price>
                     <quantity>
-			<qty/>
-			<qty_ordered/>
-		    </quantity>
-		    <list>blank</list>
-		    <position>blank</position>
+                        <qty/>
+                        <qty_ordered/>
+                    </quantity>
+                    <list>blank</list>
+                    <position>blank</position>
                 </addProduct>
                 <removeproduct>
                     <product_id>id</product_id>
@@ -157,57 +160,57 @@
                     <coupon_code>coupon</coupon_code>
                 </transaction>
             </translation>
-	    <allowed_currency_codes>
-		<USD/>
-		<AED/>
-		<ARS/>
-		<AUD/>
-		<BGN/>
-		<BOB/>
-		<BRL/>
-		<CAD/>
-		<CHF/>
-		<CLP/>
-		<CNY/>
-		<COP/>
-		<CZK/>
-		<DKK/>
-		<EGP/>
-		<EUR/>
-		<FRF/>
-		<GBP/>
-		<HKD/>
-		<HRK/>
-		<HUF/>
-		<IDR/>
-		<ILS/>
-		<INR/>
-		<JPY/>
-		<KRW/>
-		<LTL/>
-		<MAD/>
-		<MXN/>
-		<MYR/>
-		<NOK/>
-		<NZD/>
-		<PEN/>
-		<PHP/>
-		<PKR/>
-		<PLN/>
-		<RON/>
-		<RSD/>
-		<RUB/>
-		<SAR/>
-		<SEK/>
-		<SGD/>
-		<THB/>
-		<TRY/>
-		<TWD/>
-		<UAH/>
-		<VEF/>
-		<VND/>
-		<ZAR/>
-	    </allowed_currency_codes>
+            <allowed_currency_codes>
+                <USD/>
+                <AED/>
+                <ARS/>
+                <AUD/>
+                <BGN/>
+                <BOB/>
+                <BRL/>
+                <CAD/>
+                <CHF/>
+                <CLP/>
+                <CNY/>
+                <COP/>
+                <CZK/>
+                <DKK/>
+                <EGP/>
+                <EUR/>
+                <FRF/>
+                <GBP/>
+                <HKD/>
+                <HRK/>
+                <HUF/>
+                <IDR/>
+                <ILS/>
+                <INR/>
+                <JPY/>
+                <KRW/>
+                <LTL/>
+                <MAD/>
+                <MXN/>
+                <MYR/>
+                <NOK/>
+                <NZD/>
+                <PEN/>
+                <PHP/>
+                <PKR/>
+                <PLN/>
+                <RON/>
+                <RSD/>
+                <RUB/>
+                <SAR/>
+                <SEK/>
+                <SGD/>
+                <THB/>
+                <TRY/>
+                <TWD/>
+                <UAH/>
+                <VEF/>
+                <VND/>
+                <ZAR/>
+            </allowed_currency_codes>
         </baua>
     </default>
 </config>

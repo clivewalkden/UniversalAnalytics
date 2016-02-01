@@ -1,9 +1,10 @@
 <!--- Universal Analytics Start -->
-<?php $this->JS = Mage::getSingleton('baua/js'); ?>
-<?php $itemsCollection = Mage::getSingleton('checkout/session')->getQuote()->getItemsCollection(); ?>
 <?php $_helper = Mage::helper('baua') ?>
-<?php $productArray = array(); ?>
 <?php if($_helper->isActive()): ?>
+    <?php $this->JS = Mage::getSingleton('baua/js'); ?>
+    <?php $itemsCollection = Mage::getSingleton('checkout/session')->getQuote()->getItemsCollection(); ?>
+    <?php $productArray = array(); ?>
+
     <?php foreach ($itemsCollection as $item) :?>
         <?php $result = Mage::getModel('baua/monitor')->generateProductData($item); ?>
         <?php if($result != null) : ?>

@@ -130,6 +130,6 @@ class BlueAcorn_UniversalAnalytics_Helper_Data extends Mage_Core_Helper_Abstract
 
     public function isActive()
     {
-        return (bool) Mage::getStoreConfig('google/baua/active');
+        return Mage::getStoreConfigFlag('google/baua/active');
     }
 }

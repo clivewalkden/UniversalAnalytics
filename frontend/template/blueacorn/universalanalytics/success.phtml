@@ -1,19 +1,18 @@
 <!-- Universal Analytics Order Success -->
-<?php $this->JS = Mage::getSingleton('baua/js'); ?>
-<?php $order = Mage::getModel('sales/order')->loadByIncrementId(Mage::getSingleton('checkout/session')->getLastRealOrderId()); ?>
 <?php $_helper = Mage::helper('baua') ?>
-<?php $data = Mage::getModel('baua/monitor')->generateTransactionData($order); ?>
-<?php $productArray[] = array(); ?>
-
-<?php foreach ($order->getAllVisibleItems() as $item) :?>
-    <?php $result = Mage::getModel('baua/monitor')->generateProductData($item); ?>
-    <?php if($result != null) : ?>
-        <?php $productArray[] = $this->JS->generateGoogleJS('ec:addProduct', $result) . "\n"; ?>
-    <?php endif; ?>
-<?php endforeach; ?>
-
-
 <?php if($_helper->isActive()): ?>
+    <?php $this->JS = Mage::getSingleton('baua/js'); ?>
+    <?php $order = Mage::getModel('sales/order')->loadByIncrementId(Mage::getSingleton('checkout/session')->getLastRealOrderId()); ?>
+    <?php $data = Mage::getModel('baua/monitor')->generateTransactionData($order); ?>
+    <?php $productArray[] = array(); ?>
+
+    <?php foreach ($order->getAllVisibleItems() as $item) :?>
+        <?php $result = Mage::getModel('baua/monitor')->generateProductData($item); ?>
+        <?php if($result != null) : ?>
+            <?php $productArray[] = $this->JS->generateGoogleJS('ec:addProduct', $result) . "\n"; ?>
+        <?php endif; ?>
+    <?php endforeach; ?>
+
     <script type="text/javascript">
         <?php foreach($productArray as $product) : ?>
             <?php if(!is_array($product)) : ?>
