@@ -88,7 +88,7 @@
         <baua>
             <translation>
                 <addImpression>
-                    <id>entity_id</id>
+                    <id>sku</id>
                     <name>name</name>
                     <brand>manufacturer</brand>
                     <category>category_collection</category>
@@ -106,7 +106,7 @@
                     <name>name</name>
                 </addPromo>
                 <addProduct>
-                    <id>entity_id</id>
+                    <id>sku</id>
                     <name>name</name>
                     <category>category_collection</category>
                     <brand>manufacturer</brand>
