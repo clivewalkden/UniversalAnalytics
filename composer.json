@@ -3,10 +3,14 @@
     "description": "A Magento module that implements Univeral Analytics Ecommerce tracking",
     "keywords": ["magento", "analytics", "google"],
     "type": "magento-module",
-    "homepage": "http://github.com/BlueAcornInc/UniversalAnalytics",
+    "homepage": "http://github.com/clivewalkden/UniversalAnalytics",
     "license": "GNU General Public License (GPL)",
     "type": "magento-module",
     "authors": [
+        {
+            "name": "SOZO Design",
+            "email": "clive@sozodesign.co.uk"
+        },
         {
         	"name": "Blue Acorn, Inc",
         	"email": "code@blueacorn.com"

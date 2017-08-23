@@ -2,7 +2,7 @@
 <config>
     <modules>
         <BlueAcorn_UniversalAnalytics>
-            <version>0.5.4</version>
+            <version>0.5.5</version>
         </BlueAcorn_UniversalAnalytics>
     </modules>
     <global>
@@ -82,6 +82,7 @@
         <google>
             <baua>
                 <active>0</active>
+                <samplesize>1</samplesize>
             </baua>
         </google>
 
