@@ -16,10 +16,14 @@ If you already have the classic version of Google Analytics (ga.js), you will ne
 
 If you're lucky enough to be building out a clean slate implementation of Magento and you have not yet installed any analytics scripts, just go ahead and install this extension, then smile.
 
-Please [email Blue Acorn](mailto:modulesupport@blueacorn.com) with any support questions you may have or visit the [Github page](http://github.com/BlueAcornInc/UniversalAnalytics).
+Please [email SOZO Design](mailto:clive:sozodesign.co.uk) with any support questions you may have or visit the [Github page](http://github.com/clivewalkden/UniversalAnalytics).
 
 Changelog
 ---------
+
+**V0.5.5 - 8/23/2017**
+- Minor bugfixes
+- Added sample size and made it admin controlled
 
 **V0.5.4 - 3/19/2014**
 - Minor bugfixes
