@@ -2,7 +2,7 @@
 <?php $_helper = Mage::helper('baua') ?>
 <?php if($_helper->isActive()): ?>
     <?php $this->JS = Mage::getSingleton('baua/js'); ?>
-    <?php $order = Mage::getModel('sales/order')->loadByIncrementId(Mage::getSingleton('checkout/session')->getLastRealOrderId()); ?>
+    <?php $order = Mage::getModel('sales/order')->load(Mage::getSingleton('checkout/session')->getLastOrderId()); ?>
     <?php $data = Mage::getModel('baua/monitor')->generateTransactionData($order); ?>
     <?php $productArray[] = array(); ?>
 
