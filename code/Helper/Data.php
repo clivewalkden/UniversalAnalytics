@@ -128,8 +128,13 @@ class BlueAcorn_UniversalAnalytics_Helper_Data extends Mage_Core_Helper_Abstract
         Mage::getSingleton('core/session')->setData(self::BAUA_SESSION_STOREDHTML_NAME, $data);
     }
 
-    public function isActive()
+    public function isActive($store = null)
     {
-        return Mage::getStoreConfigFlag('google/baua/active');
+        return Mage::getStoreConfigFlag('google/baua/active', $store);
+    }
+
+    public function getSampleSize($store = null)
+    {
+        return (Mage::getStoreConfig('google/baua/samplesize')) ? Mage::getStoreConfig('google/baua/samplesize', $store) : 1;
     }
 }

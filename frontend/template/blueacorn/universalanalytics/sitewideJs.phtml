@@ -1,29 +1,28 @@
-<!-- Universal Analytics Start -->
 <?php $helper = Mage::helper('baua') ?>
 <?php if($helper->isActive()): ?>
-     <script type="text/javascript">
+    <!-- BEGIN GOOGLE UNIVERSAL ANALYTICS CODE {literal} -->
+    <script type="text/javascript">
+    (window.gaDevIds=window.gaDevIds||[]).push('B7gQME');
 
-         (window.gaDevIds=window.gaDevIds||[]).push('B7gQME');
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-         (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-         (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-         m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-         })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '<?php echo Mage::getStoreConfig("google/analytics/account") ?>','auto', {'siteSpeedSampleRate' : <?php echo $helper->getSampleSize() ?>});
+    ga('require', 'ec');
+    ga('require', 'displayfeatures');
 
-         ga('create', '<?php echo Mage::getStoreConfig("google/analytics/account") ?>','auto');
-         ga('require', 'ec');
-         ga('require', 'displayfeatures');
+    <?php echo $helper->generateCurrencyInit() ?>
 
-         <?php echo $helper->generateCurrencyInit() ?>
+    <?php echo $helper->generateProductImpressions() ?>
+    <?php echo $helper->generatePromoImpressions() ?>
 
-         <?php echo $helper->generateProductImpressions() ?>
-         <?php echo $helper->generatePromoImpressions() ?>
+    <?php echo $helper->getAction() ?>
+    ga('send', 'pageview');
 
-         <?php echo $helper->getAction() ?>
-         ga('send', 'pageview');
-
-         <?php echo $helper->generateProductClickEvents() ?>
-         <?php echo $helper->generatePromoClickEvents() ?>
+    <?php echo $helper->generateProductClickEvents() ?>
+    <?php echo $helper->generatePromoClickEvents() ?>
     </script>
+    <!-- {/literal} END GOOGLE UNIVERSAL ANALYTICS CODE -->
 <?php endif ?>
-<!-- Universal Analytics End -->
