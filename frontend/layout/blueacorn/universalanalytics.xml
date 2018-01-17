@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <!--
 /**
- * This is the layout xml file for BlueAcorn Universal Analytics. 
+ * This is the layout xml file for BlueAcorn Universal Analytics.
  */
 
 -->
@@ -11,13 +11,16 @@
             <block type="core/text_list" name="universalanalytics" as="universalanalytics" after="-">
                 <block type="core/template" name="universalanalytics_sitewide" as="universalanalytics_sitewide"
                        template="blueacorn/universalanalytics/sitewideJs.phtml">
-		</block>
+                </block>
             </block>
         </reference>
         <reference name="head" before="-">
             <action method="unsetChild" ifconfig="google/baua/active">
                 <alias>google_analytics</alias>
             </action>
+            <block type="core/template" name="universalanalytics_init" as="universalanalytics_init"
+                   template="blueacorn/universalanalytics/scriptInit.phtml">
+            </block>
         </reference>
         <reference name="after_body_start">
             <action method="unsetChild" ifconfig="google/baua/active">
@@ -28,11 +31,11 @@
     <checkout_onepage_index>
         <reference name="before_body_end" before="-">
             <block type="core/template" name="universalanalytics_checkout" as="universalanalytics_checkout"
-                template="blueacorn/universalanalytics/onestepcheckout.phtml">
-		<action method="setCacheLifetime">
-		    <time>null</time>
-		</action>
-	    </block>
+                   template="blueacorn/universalanalytics/onestepcheckout.phtml">
+                <action method="setCacheLifetime">
+                    <time>null</time>
+                </action>
+            </block>
         </reference>
     </checkout_onepage_index>
     <checkout_onepage_success>
